@@ -21,11 +21,11 @@
 
 import numpy
 from gnuradio import gr
-from PyQt4 import Qt, QtCore, QtGui
+from PyQt5 import Qt, QtCore, QtGui, QtWidgets
 import pmt
 import time
 
-class WaterfallMsgTagging(gr.sync_block, QtGui.QWidget):
+class WaterfallMsgTagging(gr.sync_block, QtWidgets.QWidget):
     """
     docstring for block WaterfallMsgTagging
     """
@@ -52,9 +52,9 @@ class WaterfallMsgTagging(gr.sync_block, QtGui.QWidget):
         self.last_drawn=0.0
         self.curdrawing=False
         
-        QtGui.QWidget.__init__(self)
+        QtWidgets.QWidget.__init__(self)
         
-        self.setSizePolicy(QtGui.QSizePolicy(QtGui.QSizePolicy.MinimumExpanding,QtGui.QSizePolicy.MinimumExpanding))
+        self.setSizePolicy(QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.MinimumExpanding,QtWidgets.QSizePolicy.MinimumExpanding))
         
         gr.sync_block.__init__(self,
             name="WaterfallMsgTagging",
@@ -126,7 +126,7 @@ class WaterfallMsgTagging(gr.sync_block, QtGui.QWidget):
     def resizeEvent(self, e=None):
         self.normheight=int(round(float(self.height()) *float(self.normwidth)/float(self.width())))
         self.renew_pixmap()
-        QtGui.QWidget.resizeEvent(self, e)
+        QtWidgets.QWidget.resizeEvent(self, e)
         
     
     def paintEvent(self, e=None):
@@ -136,7 +136,7 @@ class WaterfallMsgTagging(gr.sync_block, QtGui.QWidget):
         
         self.pxupdate()
         
-        QtGui.QWidget.paintEvent(self, e)
+        QtWidgets.QWidget.paintEvent(self, e)
         
         #draw Pixmap to Widget
         p=QtGui.QPainter(self)

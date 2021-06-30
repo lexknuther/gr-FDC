@@ -22,12 +22,13 @@
 Classes providing more user-friendly interfaces to the doxygen xml
 docs than the generated classes provide.
 """
+from __future__ import unicode_literals
 
 import os
 
-from generated import index
-from base import Base
-from text import description
+from .generated import index
+from .base import Base
+from .text import description
 
 class DoxyIndex(Base):
     """
@@ -299,3 +300,4 @@ class DoxyOther(Base):
         return obj.kind in cls.kinds
 
 Base.mem_classes.append(DoxyOther)
+

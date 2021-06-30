@@ -26,11 +26,11 @@ description here (python/__init__.py).
 # import swig generated symbols into the FDC namespace
 try:
 	# this might fail if the module is python-only
-	from FDC_swig import *
+	from .FDC_swig import *
 except ImportError:
 	pass
 
 # import any pure python here
-from FrequencyDomainChannelizer import FrequencyDomainChannelizer
-from WaterfallMsgTagging import WaterfallMsgTagging
+from .FrequencyDomainChannelizer import FrequencyDomainChannelizer
+from .WaterfallMsgTagging import WaterfallMsgTagging
 #

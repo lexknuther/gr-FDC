@@ -20,8 +20,8 @@
 ########################################################################
 # Project setup
 ########################################################################
-cmake_minimum_required(VERSION 2.6)
-project(gr-FDC CXX C)
+cmake_minimum_required(VERSION 3.5.1)
+project(gr-FDC VERSION 1.0.0 LANGUAGES CXX C)
 enable_testing()
 
 set (CMAKE_CXX_STANDARD 11)
@@ -145,7 +145,7 @@ find_package(Doxygen)
 # caps such as FILTER or FFT) and change the version to the minimum
 # API compatible version required.
 set(GR_REQUIRED_COMPONENTS RUNTIME FFT)
-find_package(Gnuradio "3.7.2" REQUIRED)
+find_package(Gnuradio "3.8" REQUIRED COMPONENTS blocks fft)
 list(INSERT CMAKE_MODULE_PATH 0 ${CMAKE_SOURCE_DIR}/cmake/Modules)
 include(GrVersion)
 

@@ -4,3 +4,5 @@ build*/
 CMakeLists.txt.user
 examples/*.py
 examples/*.pyc
+.idea
+cmake-build-*

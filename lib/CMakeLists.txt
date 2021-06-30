@@ -46,7 +46,13 @@ endif(NOT FDC_sources)
 
 add_library(gnuradio-FDC SHARED ${FDC_sources})
 
-target_link_libraries(gnuradio-FDC ${Boost_LIBRARIES} ${GNURADIO_ALL_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
+target_link_libraries(
+	gnuradio-FDC
+	${Boost_LIBRARIES}
+	gnuradio::gnuradio-runtime
+	gnuradio::gnuradio-fft
+	${CMAKE_THREAD_LIBS_INIT}
+)
 set_target_properties(gnuradio-FDC PROPERTIES DEFINE_SYMBOL "gnuradio_FDC_EXPORTS")
 
 
@@ -60,6 +66,11 @@ endif(APPLE)
 # Install built library files
 ########################################################################
 include(GrMiscUtils)
+set(LIBVER ${CMAKE_PROJECT_VERSION})
+if(NOT CMAKE_MODULES_DIR)
+	SET(CMAKE_MODULES_DIR lib${LIB_SUFFIX}/cmake)
+endif()
+set(GR_CMAKE_DIR "${CMAKE_MODULES_DIR}/gnuradio")
 GR_LIBRARY_FOO(gnuradio-FDC RUNTIME_COMPONENT "FDC_runtime" DEVEL_COMPONENT "FDC_devel")
 
 ########################################################################

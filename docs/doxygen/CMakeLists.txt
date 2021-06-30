@@ -44,6 +44,7 @@ add_custom_command(
     OUTPUT ${BUILT_DIRS}
     COMMAND ${DOXYGEN_EXECUTABLE} ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile
     WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+    DEPENDS ${GENERATED_DEPS}
     COMMENT "Generating documentation with doxygen"
 )
 

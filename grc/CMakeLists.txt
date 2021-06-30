@@ -17,12 +17,12 @@
 # the Free Software Foundation, Inc., 51 Franklin Street,
 # Boston, MA 02110-1301, USA.
 install(FILES
-    FDC_overlap_save.xml
-    FDC_phase_shifting_windowing_vcc.xml
-    FDC_vector_cut_vxx.xml
-    FDC_FrequencyDomainChannelizer.xml
-    FDC_activity_detection_channelizer_vcm.xml
-    FDC_PowerActivationChannel.xml
-    FDC_WaterfallMsgTagging.xml
-    FDC_SegmentDetection.xml DESTINATION share/gnuradio/grc/blocks
+    FDC_overlap_save.block.yml
+    FDC_phase_shifting_windowing_vcc.block.yml
+    FDC_vector_cut_vxx.block.yml
+    FDC_FrequencyDomainChannelizer.block.yml
+    FDC_activity_detection_channelizer_vcm.block.yml
+    FDC_PowerActivationChannel.block.yml
+    FDC_WaterfallMsgTagging.block.yml
+    FDC_SegmentDetection.block.yml DESTINATION share/gnuradio/grc/blocks
 )
